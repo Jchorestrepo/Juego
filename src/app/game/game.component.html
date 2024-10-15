@@ -1,0 +1,26 @@
+<ActionBar title="Tap the Target"></ActionBar>
+
+<GridLayout rows="auto, *, auto, auto" class="p-4">
+  <Label row="0" [text]="'Puntuación: ' + score" class="text-2xl text-center mb-4"></Label>
+  
+  <AbsoluteLayout row="1">
+    <Label
+      #target
+      text="🎯"
+      class="text-4xl"
+      [left]="targetPosition.x"
+      [top]="targetPosition.y"
+      (tap)="onTargetTap()"
+    ></Label>
+  </AbsoluteLayout>
+  
+  <StackLayout row="2" orientation="horizontal" horizontalAlignment="center">
+    <Button text="Iniciar Juego" (tap)="startGame()" *ngIf="!gameRunning" class="bg-blue-500 text-white p-4 rounded-lg m-2"></Button>
+    <Button text="+10 seg" (tap)="onExtraTimeRequest()" *ngIf="gameRunning" class="bg-green-500 text-white p-4 rounded-lg m-2"></Button>
+  </StackLayout>
+  
+  <StackLayout row="3" orientation="horizontal" horizontalAlignment="center">
+    <Label [text]="'Tiempo: ' + timeLeft" *ngIf="gameRunning" class="text-xl text-center m-2"></Label>
+    <Button text="Eliminar anuncios" (tap)="onRemoveAdsRequest()" class="bg-yellow-500 text-white p-4 rounded-lg m-2"></Button>
+  </StackLayout>
+</GridLayout>

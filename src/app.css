@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 24;
+}
+
+.text-4xl {
+  font-size: 36;
+}
+
+.mb-4 {
+  margin-bottom: 16;
+}
+
+.p-4 {
+  padding: 16;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.rounded-lg {
+  border-radius: 8;
+}
